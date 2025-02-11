@@ -1,0 +1,19 @@
+{
+  "name": "go-cms",
+  "version": "1.0.0",
+  "main": "vite.config.js",
+  "scripts": {
+    "build": "tailwindcss build -o public/css/tailwind.css",
+    "watch": "tailwindcss build -o public/css/tailwind.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.6",
+    "@tailwindcss/vite": "^4.0.6",
+    "go-cms": "file:",
+    "tailwindcss": "^4.0.6"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
