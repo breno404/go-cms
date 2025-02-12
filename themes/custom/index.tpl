@@ -4,8 +4,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/static/css/tailwind.css" rel="stylesheet" />
-    <link href="/static/css/style.css" rel="stylesheet" />
+    <link href="/static/css/styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
     <title>{{ .title }}</title>
   </head>
   <body>
@@ -13,14 +17,13 @@
       {{if ne .route "login"}}
       {{template "custom/parts/header.tpl" . }}
       {{ end }}
+
       {{if eq .route "404"}}
       {{template "custom/templates/404.tpl" . }}
       {{ else }}
-      <main class="container">
-        <h1>{{ index .items "detach-title" | or "" }}</h1>
-        <article>{{ index .items "detach-content" | or ""}}</article>
-      </main>
+      {{template "custom/templates/content.tpl" . }}
       {{ end }}
+
       {{if ne .route "login"}}
       {{template "custom/parts/footer.tpl" . }}
       {{ end }}

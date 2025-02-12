@@ -1,8 +1,10 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./themes/**/*.html", "./themes/**/*.tpl", "./themes/**/*.tmpl"], // This is where your HTML templates / JSX files are located
+  content: ["./themes/**/*.{html,tpl,tmpl}"],
   theme: {
     extend: {},
   },
   plugins: [],
+  corePlugins: {
+    preflight: false, // Se precisar evitar conflitos com o Tailwind
+  },
 };

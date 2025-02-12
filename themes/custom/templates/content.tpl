@@ -1,18 +1,9 @@
-{{ define "custom/templates/404.tpl" }}
-<style type="text/css">
-  .font-semibold {
-    font-weight: 600;
-  }
-
-  .text-xl {
-    font-size: 10rem;
-  }
-
-  .text-regular {
-    font-size: 1.25rem;
-  }
-</style>
+{{ define "custom/templates/content.tpl" }}
+{{template "custom/parts/banner.tpl" . }}
 <main class="container">
-  <div class="text-center font-semibold text-xl"></div>
+  {{template "custom/parts/detach.tpl" . }}
+  {{template "custom/parts/newsletter.tpl" . }}
+  {{template "custom/parts/news.tpl" . }}
+  {{template "custom/parts/footer.tpl" . }}
 </main>
 {{ end }}
