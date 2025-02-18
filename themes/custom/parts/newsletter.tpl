@@ -1,19 +1,29 @@
 {{define "custom/parts/newsletter.tpl"}}
-<section class="flex justify-around items-center border-y border-slate-300 p-3">
-  <span>Subscribe to our newsletter</span>
-  <form id="newsletter-form" method="post" action="/api/v1/newsletter">
+<section
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 border-y border-slate-300 p-3 my-6 items-center"
+>
+  <span
+    class="col-span-1 lg:col-span-2 text-md lg:text-lg font-semibold text-slate-700"
+    >Inscreva-se para receber nossas newsletter</span
+  >
+  <form
+    id="newsletter-form"
+    class="col-span-1 flex"
+    method="post"
+    action="/api/v1/newsletter"
+  >
     <input
       id="email"
       name="email"
       type="email"
       placeholder="example@mail.com"
-      class="outline-0 border border-slate-300 text-sm p-2 mx-1"
+      class="outline-0 border border-slate-300 text-sm p-2 mx-1 flex-2 xl:flex-3"
     />
     <button
       type="submit"
-      class="mx-1 p-2 border border-slate-400 hover:border-slate-600 hover:bg-slate-600 hover:text-white rounded-sm cursor-pointer"
+      class="mx-1 p-2 border border-slate-600 hover:border-slate-500 bg-slate-600 hover:bg-slate-500 text-white rounded-sm cursor-pointer flex-1 text-sm xl:text-base"
     >
-      Subscribe
+      Inscrever-se
     </button>
   </form>
   <script>

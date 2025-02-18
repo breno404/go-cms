@@ -20,6 +20,10 @@
 
       {{if eq .route "404"}}
       {{template "custom/templates/404.tpl" . }}
+
+      {{else if eq .route "login"}}
+      {{template "custom/templates/login.tpl" . }}
+
       {{ else }}
       {{template "custom/templates/content.tpl" . }}
       {{ end }}

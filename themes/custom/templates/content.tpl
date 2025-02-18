@@ -4,6 +4,5 @@
   {{template "custom/parts/detach.tpl" . }}
   {{template "custom/parts/newsletter.tpl" . }}
   {{template "custom/parts/news.tpl" . }}
-  {{template "custom/parts/footer.tpl" . }}
 </main>
 {{ end }}
