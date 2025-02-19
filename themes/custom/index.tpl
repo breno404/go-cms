@@ -10,25 +10,25 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
-    <title>{{ .title }}</title>
+    <title>{{ .page.title }}</title>
   </head>
   <body>
     <div class="w-full min-h-screen flex items-center flex-col">
-      {{if ne .route "login"}}
+      {{if ne .page.route "login"}}
       {{template "custom/parts/header.tpl" . }}
       {{ end }}
 
-      {{if eq .route "404"}}
+      {{if eq .page.route "404"}}
       {{template "custom/templates/404.tpl" . }}
 
-      {{else if eq .route "login"}}
+      {{else if eq .page.route "login"}}
       {{template "custom/templates/login.tpl" . }}
 
       {{ else }}
       {{template "custom/templates/content.tpl" . }}
       {{ end }}
 
-      {{if ne .route "login"}}
+      {{if ne .page.route "login"}}
       {{template "custom/parts/footer.tpl" . }}
       {{ end }}
     </div>

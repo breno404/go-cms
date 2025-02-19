@@ -1,73 +1,31 @@
 {{define "custom/parts/news.tpl"}}
 <section class="grid grid-cols-3 gap-4 p-4">
   <div class="flex flex-col col-span-3 lg:col-span-2 gap-4 relative">
+    {{$total := len .items.news}}
+    {{ $lastIndex := int (sub (flt $total) 1)}}
+    {{ range $index, $news := index .items.news }}
     <div
       class="flex p-4 gap-4 items-center lg:h-[300px] flex-wrap lg:flex-nowrap"
     >
       <div class="flex-[1_2_auto] max-w-[400px]">
         <img
           class="h-full w-auto object-cover"
-          src="/static/img/image-3.jpg"
+          src="{{ $news.image }}"
           alt=""
         />
       </div>
 
       <div class="flex lg:h-full flex-col justify-between flex-[1_1_auto]">
-        <h4 class="font-semibold text-xl">Tiroteio fecha vias expressas</h4>
-        <small class="text-slate-500 text-xs">Há 5 horas - Em Política</small>
+        <h4 class="font-semibold text-xl">{{ $news.title }}</h4>
+        <small class="text-slate-500 text-xs"
+          >{{ $news.time }} em {{ $news.category }}</small
+        >
       </div>
     </div>
+    {{if ne  $index $lastIndex}}
     <hr class="border-slate-300" />
-    <div
-      class="flex p-4 gap-4 items-center lg:h-[300px] flex-wrap lg:flex-nowrap"
-    >
-      <div class="flex-[1_2_auto] max-w-[400px]">
-        <img
-          class="h-full w-auto object-cover"
-          src="/static/img/image-3.jpg"
-          alt=""
-        />
-      </div>
-
-      <div class="flex lg:h-full flex-col justify-between flex-[1_1_auto]">
-        <h4 class="font-semibold text-xl">Tiroteio fecha vias expressas</h4>
-        <small class="text-slate-500 text-xs">Há 5 horas - Em Política</small>
-      </div>
-    </div>
-    <hr class="border-slate-300" />
-    <div
-      class="flex p-4 gap-4 items-center lg:h-[300px] flex-wrap lg:flex-nowrap"
-    >
-      <div class="flex-[1_2_auto] max-w-[400px]">
-        <img
-          class="h-full w-auto object-cover"
-          src="/static/img/image-3.jpg"
-          alt=""
-        />
-      </div>
-
-      <div class="flex lg:h-full flex-col justify-between flex-[1_1_auto]">
-        <h4 class="font-semibold text-xl">Tiroteio fecha vias expressas</h4>
-        <small class="text-slate-500 text-xs">Há 5 horas - Em Política</small>
-      </div>
-    </div>
-    <hr class="border-slate-300" />
-    <div
-      class="flex p-4 gap-4 items-center lg:h-[300px] flex-wrap lg:flex-nowrap"
-    >
-      <div class="flex-[1_2_auto] max-w-[400px]">
-        <img
-          class="h-full w-auto object-cover"
-          src="/static/img/image-3.jpg"
-          alt=""
-        />
-      </div>
-
-      <div class="flex lg:h-full flex-col justify-between flex-[1_1_auto]">
-        <h4 class="font-semibold text-xl">Tiroteio fecha vias expressas</h4>
-        <small class="text-slate-500 text-xs">Há 5 horas - Em Política</small>
-      </div>
-    </div>
+    {{ end }}
+    {{ end }}
     <button
       id="expand-news"
       class="absolute bottom-0 w-full py-2 bg-red-700 font-semibold hover:bg-red-600 transition-all duration-200 text-white cursor-pointer"
